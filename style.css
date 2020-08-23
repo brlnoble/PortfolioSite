@@ -1,0 +1,171 @@
+html { /*hide scroll wheel*/
+    overflow: scroll;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial;
+    background-color: #FFF;
+    font-family: 'Roboto Mono', monospace;
+    color: #000;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    z-index: 50;
+}
+
+
+/*------------------------Main Stuff----------------------*/
+.title {
+    font-size: 10vh;
+    height: 20vh;
+    color: #FFF;
+    padding: 0;
+    margin: 0;
+    background-color: #004400;
+    text-align: center;
+}
+
+.title.port {
+    background-color: #0D4D4D;
+    color: #222;
+}
+
+.title.build {
+    background-color: #801515;
+}
+
+.title.prod {
+    background-color: rgb(80, 43, 160);
+    color: #222;
+}
+
+.title.ill {
+    background-color: #B35100;
+}
+
+.title.phot {
+    background-color: #006C6C;
+    color: #222;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.images img {
+    max-width: 50vw;
+    min-width: 400px;
+    margin: 20px;
+}
+
+.images.port {
+    background-color: #222;
+}
+
+.images.build {
+    background-color: #FFF;
+}
+
+.images.prod {
+    background-color: #222;
+}
+
+.images.phot {
+    background-color: #222;
+}
+
+#coverP {
+    height: 5vh;
+}
+
+#coverD {
+    height: 5vh;
+}
+
+/*-------------------------Nav Bar-----------------------*/
+.nav {
+    position: fixed; /*navigation always at top of screen*/
+    top: 0;
+    width: 100%;
+    background: #555;
+    z-index: 100; /*keep it on top of everything else*/
+    height: 6vh; /*scale with window size*/
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-color: #AAA;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+li {
+    padding: 20px;
+    /* padding-top: 10px; */
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 2px;
+    margin: 0;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover { /*increase text size when hovering*/
+    text-decoration: overline;
+}
+
+
+/*--------------------------Mobile Support-------------------------*/
+
+@media only screen and (max-height: 600px) { /*keep nav bar from shrinking too much*/
+    .nav {
+        height: 48px;
+    }
+    .title {
+        height: 125px;
+        font-size: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-items {
+        font-size: 2vw;
+        padding: 0;
+    }
+    .nav {
+        height: 48px;
+    }
+    .title {
+        font-size: 10vh;
+    }
+}
